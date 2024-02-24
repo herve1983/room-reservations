@@ -34,3 +34,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Local development
+
+### Install supabase CLI
+
+```text
+brew install supabase/tap/supabase
+```
+
+### Initialize supabase services
+
+```text
+supabase init
+```
+
+Logs: 
+
+```text
+Generate VS Code settings for Deno? [y/N] n
+Finished supabase init.
+```
+
+At this point we have:
+- supabase services Initialized for development purposes
+- a supabase folder at the root of the project, containing some files.

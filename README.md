@@ -82,3 +82,56 @@ service_role key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZ
 ```
 
 At this point we have supabase services started and running for development purposes. Supabase dashboard will be available [here](http://localhost:54323)
+
+## Migrations
+
+### Create a migration using CLI
+
+This will create a migration file under the supabase/migrations folder with the format <timestamp>_init-schema.sql
+
+```text
+supabase migration new init-schema  
+```
+
+Logs:
+
+```text
+Created new migration at supabase/migrations/20240224165446_init-schema.sql
+```
+
+### Apply locally the migrations
+
+```text
+supabase migration up
+```
+
+Logs: 
+
+```text
+Connecting to local database...
+Applying migration 20240224165446_init-schema.sql...
+Local database is up to date.
+```
+
+### Update types locally using CLI
+
+```text
+supabase gen types typescript --local > types.gen.ts
+```
+This will update the file: types.gen.ts  
+Always do it before after creating a new migrations and expose the new types created if needed.
+
+
+## Tips
+
+### Expose types globally in the project
+
+Create a file called <global.d.ts> at the root of the project.
+
+```typescript
+import type { Database } from "./types.gen";
+
+declare global {
+    type users = Database["public"]["Tables"]["users"]["Row"];
+}
+```

@@ -121,6 +121,13 @@ supabase gen types typescript --local > types.gen.ts
 This will update the file: types.gen.ts  
 Always do it before after creating a new migrations and expose the new types created if needed.
 
+## Tailwind
+
+If tailwind intellisense do not work, in my case i guess its due to the fact that i have  
+at the root of the project **_tailwind.config.ts_** instead of **_tailwind.config.js_**  
+So to fix it :
+- Delete postcss.config.js and tailwind.config.ts files (at the root of the project)
+- Follow Next.js [documentation](https://nextjs.org/docs/app/building-your-application/styling/tailwind-css#configuring-tailwind)
 
 ## Tips
 

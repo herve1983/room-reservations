@@ -1,0 +1,18 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+**/*.html
+
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+
+# Supabase
+supabase
+
+# Ignoring this file will save us issues when running ci.yml file later
+types.gen.ts

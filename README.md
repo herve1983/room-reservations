@@ -49,7 +49,7 @@ brew install supabase/tap/supabase
 supabase init
 ```
 
-Logs: 
+Logs:
 
 ```text
 Generate VS Code settings for Deno? [y/N] n
@@ -57,6 +57,7 @@ Finished supabase init.
 ```
 
 At this point we have:
+
 - supabase services Initialized for development purposes
 - a supabase folder at the root of the project, containing some files.
 
@@ -65,6 +66,7 @@ At this point we have:
 ```text
 supabase start
 ```
+
 Logs:
 
 ```text
@@ -87,10 +89,10 @@ At this point we have supabase services started and running for development purp
 
 ### Create a migration using CLI
 
-This will create a migration file under the supabase/migrations folder with the format <timestamp>_init-schema.sql
+This will create a migration file under the supabase/migrations folder with the format <timestamp>\_init-schema.sql
 
 ```text
-supabase migration new init-schema  
+supabase migration new init-schema
 ```
 
 Logs:
@@ -105,7 +107,7 @@ Created new migration at supabase/migrations/20240224165446_init-schema.sql
 supabase migration up
 ```
 
-Logs: 
+Logs:
 
 ```text
 Connecting to local database...
@@ -118,6 +120,7 @@ Local database is up to date.
 ```text
 supabase gen types typescript --local > types.gen.ts
 ```
+
 This will update the file: types.gen.ts  
 Always do it before after creating a new migrations and expose the new types created if needed.
 
@@ -126,6 +129,7 @@ Always do it before after creating a new migrations and expose the new types cre
 If tailwind intellisense do not work, in my case i guess its due to the fact that i have  
 at the root of the project **_tailwind.config.ts_** instead of **_tailwind.config.js_**  
 So to fix it :
+
 - Delete postcss.config.js and tailwind.config.ts files (at the root of the project)
 - Follow Next.js [documentation](https://nextjs.org/docs/app/building-your-application/styling/tailwind-css#configuring-tailwind)
 
@@ -139,6 +143,6 @@ Create a file called <global.d.ts> at the root of the project.
 import type { Database } from "./types.gen";
 
 declare global {
-    type users = Database["public"]["Tables"]["users"]["Row"];
+  type users = Database["public"]["Tables"]["users"]["Row"];
 }
 ```
